@@ -15,10 +15,10 @@ class PaginationCubit extends Cubit<PaginationState> {
     this.isLive = false,
   }) : super(PaginationInitial());
 
-  DocumentSnapshot? _lastDocument;
+  DocumentSnapshot<Map<String, dynamic>>? _lastDocument;
   final int _limit;
   final Query _query;
-  final DocumentSnapshot? _startAfterDocument;
+  final DocumentSnapshot<Map<String, dynamic>>? _startAfterDocument;
   final bool isLive;
 
   final List<StreamSubscription<QuerySnapshot>> _streams = List<StreamSubscription<QuerySnapshot>>();
