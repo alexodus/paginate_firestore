@@ -53,7 +53,7 @@ class PaginateFirestore extends StatefulWidget {
   final List<ChangeNotifier>? listeners;
   final EdgeInsets padding;
   final ScrollPhysics? physics;
-  final Query query;
+  final Query<Map<String, dynamic>> query;
   final bool reverse;
   final ScrollController? scrollController;
   final Axis scrollDirection;
@@ -69,7 +69,7 @@ class PaginateFirestore extends StatefulWidget {
 
   final Widget Function(Exception)? onError;
 
-  final Widget Function(int, BuildContext, DocumentSnapshot) itemBuilder;
+  final Widget Function(int, BuildContext, DocumentSnapshot<Map<String, dynamic>>) itemBuilder;
 
   final void Function(PaginationLoaded)? onReachedEnd;
 
