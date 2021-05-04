@@ -17,7 +17,7 @@ class PaginationCubit extends Cubit<PaginationState> {
 
   DocumentSnapshot<Map<String, dynamic>>? _lastDocument;
   final int _limit;
-  final Query _query;
+  final Query<Map<String, dynamic>> _query;
   final DocumentSnapshot<Map<String, dynamic>>? _startAfterDocument;
   final bool isLive;
 
@@ -113,7 +113,7 @@ class PaginationCubit extends Cubit<PaginationState> {
     ));
   }
 
-  Query _getQuery() {
+  Query<Map<String, dynamic>> _getQuery() {
     var localQuery = (_lastDocument != null)
         ? _query.startAfterDocument(_lastDocument!)
         : _startAfterDocument != null
