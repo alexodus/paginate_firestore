@@ -21,7 +21,7 @@ class PaginationCubit extends Cubit<PaginationState> {
   final DocumentSnapshot<Map<String, dynamic>>? _startAfterDocument;
   final bool isLive;
 
-  final List<StreamSubscription<QuerySnapshot<Map<String, dynamic>>>> _streams = List<StreamSubscription<QuerySnapshot<Map<String, dynamic>>>>();
+  final List<StreamSubscription<QuerySnapshot<Map<String, dynamic>>>> _streams = [];
 
   void filterPaginatedList(String searchTerm) {
     if (state is PaginationLoaded) {
