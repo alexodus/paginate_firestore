@@ -73,7 +73,7 @@ class PaginationCubit extends Cubit<PaginationState> {
         _emitPaginatedState(
           querySnapshot.docs,
           previousList:
-              loadedState.documentSnapshots as List<QueryDocumentSnapshot>,
+              loadedState.documentSnapshots as List<QueryDocumentSnapshot<Map<String, dynamic>>>,
         );
       }
     } on PlatformException catch (exception) {
@@ -89,11 +89,11 @@ class PaginationCubit extends Cubit<PaginationState> {
     } else if (state is PaginationLoaded) {
       final loadedState = state as PaginationLoaded;
       if (loadedState.hasReachedEnd) return;
-      StreamSubscription<QuerySnapshot> listener =  localQuery.snapshots().listen((querySnapshot) {
+      StreamSubscription<QuerySnapshot<Map<String, dynamic>>> listener =  localQuery.snapshots().listen((querySnapshot) {
         _emitPaginatedState(
           querySnapshot.docs,
           previousList:
-              loadedState.documentSnapshots as List<QueryDocumentSnapshot>,
+              loadedState.documentSnapshots as List<QueryDocumentSnapshot<Map<String, dynamic>>>,
         );
       });
 
