@@ -27,7 +27,7 @@ class PaginationLoaded extends PaginationState {
   });
 
   final bool hasReachedEnd;
-  final List<DocumentSnapshot> documentSnapshots;
+  final List<DocumentSnapshot<Map<String, dynamic>>> documentSnapshots;
 
   PaginationLoaded copyWith({
     bool? hasReachedEnd,
