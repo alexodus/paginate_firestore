@@ -102,8 +102,8 @@ class PaginationCubit extends Cubit<PaginationState> {
   }
 
   void _emitPaginatedState(
-    List<QueryDocumentSnapshot> newList, {
-    List<QueryDocumentSnapshot> previousList = const [],
+    List<QueryDocumentSnapshot<Map<String, dynamic>>> newList, {
+    List<QueryDocumentSnapshot<Map<String, dynamic>>> previousList = const [],
   }) {
     print(newList.length);
     _lastDocument = newList.isNotEmpty ? newList.last : null;
